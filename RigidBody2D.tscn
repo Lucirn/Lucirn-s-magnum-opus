@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gost.png" type="Texture" id=1]
+[ext_resource path="res://gost2.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 72.9242, 335.165, 155.55, 352.528, 197.462, 262.718, 229.195, 247.15, 212.43, 226.793, 183.092, 223.8, 161.537, 225.596, 153.754, 212.424, 146.569, 192.665, 119.626, 186.079, 111.842, 222.003, 93.2813, 222.602, 72.9242, 194.462, 54.3634, 213.022, 59.1533, 256.131, 67.5356, 307.024, 77.1154, 338.757 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 150.266, 265.437 )
+scale = Vector2( 2.57887, 2.55063 )
+frames = SubResource( 1 )
+playing = true
