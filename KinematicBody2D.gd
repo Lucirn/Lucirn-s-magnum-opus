@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-# This demo shows how to build a kinematic controller.
+func _ready():
+	print("123")
 
 # Member variables
 const GRAVITY = 500.0 # pixels/second/second
