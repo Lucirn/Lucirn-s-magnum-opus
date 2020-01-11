@@ -21,4 +21,5 @@ polygon = PoolVector2Array( 72.9242, 335.165, 155.55, 352.528, 197.462, 262.718,
 position = Vector2( 150.266, 265.437 )
 scale = Vector2( 2.57887, 2.55063 )
 frames = SubResource( 1 )
+frame = 1
 playing = true

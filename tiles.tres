@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://cock.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 32.2197, 30.9988 )
 
 [resource]
 0/name = "Sprite"
@@ -19,6 +19,6 @@ extents = Vector2( 32, 32 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 31.6765, 32.9706 )
 } ]
 0/z_index = 0

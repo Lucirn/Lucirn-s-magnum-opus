@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 func _ready():
-	print("123")
+	add_to_group("Player")
 
 # Member variables
-const GRAVITY = 500.0 # pixels/second/second
+const GRAVITY = 300.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
@@ -26,8 +26,10 @@ var prev_jump_pressed = false
 
 
 func _physics_process(delta):
-	# Create forces
+	mouse_action()
+	
 	var force = Vector2(0, GRAVITY)
+	
 	
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
@@ -74,3 +76,26 @@ func _physics_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
+	
+	
+
+func reycast(from,to):
+	var space_state=get_world_2d().direct_space_state
+	return space_state.intersect_ray(from,to,[self])
+	
+func mouse_action():
+	if Input.is_action_just_pressed("Mouse"):
+		var mpos=get_global_mouse_position()
+		var call=reycast(self.position,mpos)
+		print(call)
+		if call:
+			var cell=$"../TileMap".world_to_map(call.position+call.normal)
+			$"../TileMap".set_cell(cell.x,cell.y,0)
+	if Input.is_action_just_pressed("right_click"):
+		var mpos=get_global_mouse_position()
+		var call=reycast(self.position,mpos)
+		print(call)
+		if call:
+			var cell=$"../TileMap".world_to_map(call.position-call.normal)
+			$"../TileMap".set_cell(cell.x,cell.y,-1)
+

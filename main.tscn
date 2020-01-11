@@ -1,14 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=3]
 
 [node name="main" type="Node"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
-format = 1
-tile_data = PoolIntArray( -65529, 0, 0, 7, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 131079, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0 )
+[node name="Door" parent="." instance=ExtResource( 1 )]
+position = Vector2( 39.3573, 448.304 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 196613, 0, 0, 262151, 0, 0, 262152, 0, 0, 327692, 0, 0, 327693, 0, 0, 458760, 0, 0, 458761, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524292, 0, 0, 524293, 0, 0 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 163.129, 84.2955 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+expand = true
