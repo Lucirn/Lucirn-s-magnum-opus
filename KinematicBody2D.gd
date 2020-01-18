@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var kok=0
+
 func _ready():
 	add_to_group("Player")
 
@@ -29,6 +31,13 @@ func _physics_process(delta):
 	mouse_action()
 	
 	var force = Vector2(0, GRAVITY)
+	
+	if Input.is_action_pressed("1"):
+		kok=0
+	
+	
+	if Input.is_action_pressed("2"):
+		kok=1
 	
 	
 	var walk_left = Input.is_action_pressed("move_left")
@@ -90,7 +99,7 @@ func mouse_action():
 		print(call)
 		if call:
 			var cell=$"../TileMap".world_to_map(call.position+call.normal)
-			$"../TileMap".set_cell(cell.x,cell.y,0)
+			$"../TileMap".set_cell(cell.x,cell.y,kok)
 	if Input.is_action_just_pressed("right_click"):
 		var mpos=get_global_mouse_position()
 		var call=reycast(self.position,mpos)
