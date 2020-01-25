@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://i.tres" type="TileSet" id=2]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Camera2D.gd" type="Script" id=4]
+[ext_resource path="res://Button.gd" type="Script" id=5]
 
 [node name="main" type="Node"]
 
@@ -35,3 +36,5 @@ margin_left = 825.594
 margin_top = 47.1307
 margin_right = 900.594
 margin_bottom = 98.1307
+script = ExtResource( 5 )
+[connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_Button_pressed"]
