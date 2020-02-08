@@ -22,13 +22,14 @@ func _on_Button_pressed():
 
 
 func cells_save(cells):
+	var cells_new=[]
+	for cell in cells:
+		cells_new.append([cell.x,cell.y,$"../../TileMap".get_cell(cell.x,cell.y)])
 	var file=File.new()
 	file.open("res://save.dat",file.WRITE)
-	file.store_var(cells)
+	file.store_var(cells_new)
 	file.close()
-	#var cells_new=[]
-	#for cell in cells:
-	#	cells_new.append(Vector3
+	
 
 func cells_load():
 	var file=File.new()
@@ -40,4 +41,5 @@ func cells_load():
 		tilemap.clear()
 		for cell in cells:
 			print(cell)
-			tilemap.set_cellv(cell,0)
+			#tilemap.set_cellv(cell,0)
+			$"../../TileMap".set_cellv(Vector2(cell[0],cell[1]),cell[2])

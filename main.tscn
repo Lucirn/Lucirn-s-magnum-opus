@@ -1,40 +1,47 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Door.tscn" type="PackedScene" id=1]
-[ext_resource path="res://i.tres" type="TileSet" id=2]
-[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Camera2D.gd" type="Script" id=4]
-[ext_resource path="res://Button.gd" type="Script" id=5]
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
+[ext_resource path="res://depositphotos_181707556-stock-illustration-vector-pixel-background-with-evening.jpg" type="Texture" id=2]
+[ext_resource path="res://Button.gd" type="Script" id=3]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://i.tres" type="TileSet" id=5]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Node"]
-
-[node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 38.3573, 448.304 )
-
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 1, -1 )
-tile_set = ExtResource( 2 )
-format = 1
-tile_data = PoolIntArray( 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 196613, 0, 0, 262151, 0, 0, 262152, 0, 0, 327692, 0, 0, 327693, 0, 0, 458760, 0, 0, 458761, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524292, 0, 0, 524293, 0, 0 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 163.129, 84.2955 )
-
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 169.602, 92.7513 )
 anchor_mode = 0
 current = true
-script = ExtResource( 4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Camera2D"]
+position = Vector2( 464.187, 292.305 )
+scale = Vector2( 2.60507, 2.06472 )
+texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="Camera2D"]
 margin_left = 825.594
 margin_top = 47.1307
 margin_right = 900.594
 margin_bottom = 98.1307
-script = ExtResource( 5 )
+script = ExtResource( 3 )
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5771.06, 382.649 )
+scale = Vector2( -1.888, 1.978 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, -1 )
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( 11, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131081, 0, 0, 196617, 0, 0, 196692, 0, 0, 262174, 0, 0, 262228, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327764, 0, 0, 393244, 0, 0, 393300, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458831, 0, 0, 458832, 0, 0, 458836, 0, 0, 458837, 0, 0, 458838, 0, 0, 458839, 0, 0, 458840, 0, 0, 458841, 0, 0, 458842, 0, 0, 458843, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524314, 0, 0, 524326, 0, 0, 524327, 0, 0, 524363, 0, 0, 524364, 0, 0, 524365, 0, 0, 524366, 0, 0, 589864, 0, 0, 589897, 0, 0, 589898, 0, 0, 589899, 0, 0, 655384, 0, 0, 655415, 0, 0, 655431, 0, 0, 655432, 0, 0, 655433, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720939, 0, 0, 720943, 0, 0, 720957, 0, 0, 720958, 0, 0, 720966, 0, 0, 2752512, 1, 0, 2752513, 1, 0, 2752514, 1, 0, 2752515, 1, 0, 2752516, 1, 0, 2752517, 1, 0, 2752518, 1, 0, 2752519, 1, 0, 2752520, 1, 0, 2752521, 1, 0, 2752522, 1, 0, 2752523, 1, 0, 2752524, 1, 0, 2752525, 1, 0, 2752526, 1, 0, 2752527, 1, 0, 2752528, 1, 0, 2752529, 1, 0, 2752530, 1, 0, 2752531, 1, 0, 2752532, 1, 0, 2752533, 1, 0, 2752534, 1, 0, 2752535, 1, 0, 2752536, 1, 0, 2752537, 1, 0, 2752538, 1, 0, 2752539, 1, 0, 2752540, 1, 0, 2752541, 1, 0, 2752542, 1, 0, 2752543, 1, 0, 2752544, 1, 0, 2752545, 1, 0, 2752546, 1, 0, 2752547, 1, 0, 2752548, 1, 0, 2752549, 1, 0, 2752550, 1, 0, 2752551, 1, 0, 2752552, 1, 0, 2752553, 1, 0, 2752554, 1, 0, 2752555, 1, 0, 2752556, 1, 0, 2752557, 1, 0, 2752558, 1, 0, 2752559, 1, 0, 2752560, 1, 0, 2752561, 1, 0, 2752562, 1, 0, 2752563, 1, 0, 2752564, 1, 0, 2752565, 1, 0, 2752566, 1, 0, 2752567, 1, 0, 2752568, 1, 0, 2752569, 1, 0, 2752570, 1, 0, 2752571, 1, 0, 2752572, 1, 0, 2752573, 1, 0, 2752574, 1, 0, 2752575, 1, 0, 2752576, 1, 0, 2752577, 1, 0, 2752578, 1, 0, 2752579, 1, 0, 2752580, 1, 0, 2752581, 1, 0, 2752582, 1, 0, 2752583, 1, 0, 2752584, 1, 0, 2752585, 1, 0, 2752586, 1, 0, 2752587, 1, 0, 2752588, 1, 0, 2752589, 1, 0 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 163.129, 84.2955 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+expand = true
 [connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_Button_pressed"]

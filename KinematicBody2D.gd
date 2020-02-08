@@ -107,4 +107,6 @@ func mouse_action():
 		if call:
 			var cell=$"../TileMap".world_to_map(call.position-call.normal)
 			$"../TileMap".set_cell(cell.x,cell.y,-1)
+	
+	
 
